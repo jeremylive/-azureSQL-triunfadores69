@@ -20,7 +20,7 @@ namespace DotNetAppSqlDb
             );
 
             routes.MapRoute(
-                name: "Default",
+                name: "Default2",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Carrer", action = "Index", id = UrlParameter.Optional }
             );
