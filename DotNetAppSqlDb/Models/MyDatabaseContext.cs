@@ -19,6 +19,7 @@ namespace DotNetAppSqlDb.Models
         {
         }
 
-        public System.Data.Entity.DbSet<DotNetAppSqlDb.Models.Todo> Todoes { get; set; }
+        public System.Data.Entity.DbSet<DotNetAppSqlDb.Models.Student> StudentM { get; set; }
+        public System.Data.Entity.DbSet<DotNetAppSqlDb.Models.Carrer> CarrerM { get; set; }
     }
 }

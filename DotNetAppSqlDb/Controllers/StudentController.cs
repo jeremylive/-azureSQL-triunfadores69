@@ -10,115 +10,115 @@ using DotNetAppSqlDb.Models;using System.Diagnostics;
 
 namespace DotNetAppSqlDb.Controllers
 {
-    public class TodosController : Controller
+    public class StudentController : Controller
     {
         private MyDatabaseContext db = new MyDatabaseContext();
 
-        // GET: Todos
+        // GET: Students
         public ActionResult Index()
         {            
-            Trace.WriteLine("GET /Todos/Index");
-            return View(db.Todoes.ToList());
+            Trace.WriteLine("GET /Students/Index");
+            return View(db.StudentM.ToList());
         }
 
-        // GET: Todos/Details/5
+        // GET: Students/Details/5
         public ActionResult Details(int? id)
         {
-            Trace.WriteLine("GET /Todos/Details/" + id);
+            Trace.WriteLine("GET /Students/Details/" + id);
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Todo todo = db.Todoes.Find(id);
-            if (todo == null)
+            Student student = db.StudentM.Find(id);
+            if (student == null)
             {
                 return HttpNotFound();
             }
-            return View(todo);
+            return View(student);
         }
 
-        // GET: Todos/Create
+        // GET: Students/Create
         public ActionResult Create()
         {
-            Trace.WriteLine("GET /Todos/Create");
-            return View(new Todo { CreatedDate = DateTime.Now });
+            Trace.WriteLine("GET /Students/Create");
+            return View(new Student { in_date = DateTime.Now });
         }
 
-        // POST: Todos/Create
+        // POST: Students/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Description,CreatedDate")] Todo todo)
+        public ActionResult Create([Bind(Include = "Description,CreatedDate")] Student student)
         {
-            Trace.WriteLine("POST /Todos/Create");
+            Trace.WriteLine("POST /Students/Create");
             if (ModelState.IsValid)
             {
-                db.Todoes.Add(todo);
+                db.StudentM.Add(student);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(todo);
+            return View(student);
         }
 
-        // GET: Todos/Edit/5
+        // GET: Students/Edit/5
         public ActionResult Edit(int? id)
         {
-            Trace.WriteLine("GET /Todos/Edit/" + id);
+            Trace.WriteLine("GET /Students/Edit/" + id);
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Todo todo = db.Todoes.Find(id);
-            if (todo == null)
+            Student student = db.StudentM.Find(id);
+            if (student == null)
             {
                 return HttpNotFound();
             }
-            return View(todo);
+            return View(student);
         }
 
-        // POST: Todos/Edit/5
+        // POST: Students/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,Description,CreatedDate")] Todo todo)
+        public ActionResult Edit([Bind(Include = "id,Description,CreatedDate")] Student student)
         {
-            Trace.WriteLine("POST /Todos/Edit/" + todo.ID);
+            Trace.WriteLine("POST /Students/Edit/" + student.id);
             if (ModelState.IsValid)
             {
-                db.Entry(todo).State = EntityState.Modified;
+                db.Entry(student).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(todo);
+            return View(student);
         }
 
-        // GET: Todos/Delete/5
+        // GET: Students/Delete/5
         public ActionResult Delete(int? id)
         {
-            Trace.WriteLine("GET /Todos/Delete/" + id);
+            Trace.WriteLine("GET /Students/Delete/" + id);
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Todo todo = db.Todoes.Find(id);
-            if (todo == null)
+            Student student = db.StudentM.Find(id);
+            if (student == null)
             {
                 return HttpNotFound();
             }
-            return View(todo);
+            return View(student);
         }
 
-        // POST: Todos/Delete/5
+        // POST: Students/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Trace.WriteLine("POST /Todos/Delete/" + id);
-            Todo todo = db.Todoes.Find(id);
-            db.Todoes.Remove(todo);
+            Trace.WriteLine("POST /Students/Delete/" + id);
+            Student student = db.StudentM.Find(id);
+            db.StudentM.Remove(student);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

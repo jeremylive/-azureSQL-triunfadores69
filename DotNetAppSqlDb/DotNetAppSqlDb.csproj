@@ -26,6 +26,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <TargetFrameworkProfile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -144,12 +145,16 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\TodosController.cs" />
+    <Compile Include="Controllers\CarrerController.cs" />
+    <Compile Include="Controllers\InChargeCarrerController.cs" />
+    <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Carrer.cs" />
+    <Compile Include="Models\InChargeCarrer.cs" />
     <Compile Include="Models\MyDatabaseContext.cs" />
-    <Compile Include="Models\Todo.cs" />
+    <Compile Include="Models\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -188,15 +193,20 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Todos\Create.cshtml" />
-    <Content Include="Views\Todos\Delete.cshtml" />
-    <Content Include="Views\Todos\Details.cshtml" />
-    <Content Include="Views\Todos\Edit.cshtml" />
-    <Content Include="Views\Todos\Index.cshtml" />
     <Content Include="Views\TodosDone\Create.cshtml" />
     <Content Include="Views\TodosDone\Details.cshtml" />
     <Content Include="Views\TodosDone\Edit.cshtml" />
     <Content Include="Views\TodosDone\Index.cshtml" />
+    <Content Include="Views\Carrer\Create.cshtml" />
+    <Content Include="Views\Carrer\Delete.cshtml" />
+    <Content Include="Views\Carrer\Details.cshtml" />
+    <Content Include="Views\Carrer\Edit.cshtml" />
+    <Content Include="Views\Carrer\Index.cshtml" />
+    <Content Include="Views\Student\Create.cshtml" />
+    <Content Include="Views\Student\Delete.cshtml" />
+    <Content Include="Views\Student\Details.cshtml" />
+    <Content Include="Views\Student\Edit.cshtml" />
+    <Content Include="Views\Student\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
