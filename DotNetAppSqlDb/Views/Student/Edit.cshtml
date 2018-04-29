@@ -4,7 +4,11 @@
     ViewBag.Title = "Edit";
 }
 
+<<<<<<< HEAD:DotNetAppSqlDb/Views/Student/Edit.cshtml
 <h2>Edit</h2>
+=======
+<h2>Registrar</h2>
+>>>>>>> 970e8aa4e7d079fc5a7a552432f51851bbeb6fcb:DotNetAppSqlDb/Views/Todos/Create.cshtml
 
 
 @using (Html.BeginForm())
@@ -12,7 +16,7 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Todo</h4>
+        <h4>Nuevo Estudiante</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.ID)
@@ -42,7 +46,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Volver a la lista", "Index")
 </div>
 
 @section Scripts {
