@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="db2Tarea3" id="CCA4F1ED-E5F9-7CEA-8989-54C6A3066344" version="3.5">
+<createdBy>windo</createdBy>
+<createdTime>2018-04-29 00:31:56 UTC</createdTime>
+<ownerDesignName>db2Tarea3</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>CCA4F1ED-E5F9-7CEA-8989-54C6A3066344</designId>
+</OSDM_Design>
