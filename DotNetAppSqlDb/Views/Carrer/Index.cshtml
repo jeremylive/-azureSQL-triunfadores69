@@ -1,21 +1,24 @@
-﻿@model IEnumerable<DotNetAppSqlDb.Models.Todo>
+﻿@model IEnumerable<DotNetAppSqlDb.Models.Carrer>
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Estudiantes</h2>
+<h2>Carrer home</h2>
 
 <p>
-    @Html.ActionLink("Crear nuevo", "Create")
+    @Html.ActionLink("Create new", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Description)
+            @Html.DisplayNameFor(model => model.name)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CreatedDate)
+            @Html.DisplayNameFor(model => model.in_charge)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.location)
         </th>
         <th></th>
     </tr>
@@ -23,10 +26,13 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Description)
+            @Html.DisplayFor(modelItem => item.name)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.CreatedDate)
+            @Html.DisplayFor(modelItem => item.in_charge)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.location)
         </td>
         <td>
             @Html.ActionLink("Editar", "Edit", new { id=item.ID }) |

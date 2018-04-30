@@ -1,10 +1,10 @@
-﻿@model DotNetAppSqlDb.Models.Todo
+﻿@model DotNetAppSqlDb.Models.Carrer
 
 @{
     ViewBag.Title = "Delete";
 }
 
-<h2>Eliminar estudiante</h2>
+<h2>Delete a Carrer</h2>
 
 <h3></h3>
 <div>
@@ -12,19 +12,19 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Description)
+            @Html.DisplayNameFor(model => model.name)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Description)
+            @Html.DisplayFor(model => model.name)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.CreatedDate)
+            @Html.DisplayNameFor(model => model.in_charge)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.CreatedDate)
+            @Html.DisplayFor(model => model.in_charge)
         </dd>
 
     </dl>

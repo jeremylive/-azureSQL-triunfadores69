@@ -1,4 +1,4 @@
-﻿@model DotNetAppSqlDb.Models.Todo
+﻿@model DotNetAppSqlDb.Models.Student
 
 @{
     ViewBag.Title = "Details";
@@ -7,23 +7,23 @@
 <h2></h2>
 
 <div>
-    <h4>Detalle de un estudiante:</h4>
+    <h4>Detail of Student</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Description)
+            @Html.DisplayNameFor(model => model.name)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Description)
+            @Html.DisplayFor(model => model.name)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.CreatedDate)
+            @Html.DisplayNameFor(model => model.carnet)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.CreatedDate)
+            @Html.DisplayFor(model => model.carnet)
         </dd>
 
     </dl>

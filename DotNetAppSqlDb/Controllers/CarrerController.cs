@@ -14,111 +14,111 @@ namespace DotNetAppSqlDb.Controllers
     {
         private MyDatabaseContext db = new MyDatabaseContext();
 
-        // GET: Students
+        // GET: Carrer
         public ActionResult Index()
         {            
-            Trace.WriteLine("GET /Students/Index");
-            return View(db.StudentM.ToList());
+            Trace.WriteLine("GET /Carrer/Index");
+            return View(db.CarrerM.ToList());
         }
 
-        // GET: Students/Details/5
+        // GET: Carrer/Details/5
         public ActionResult Details(int? id)
         {
-            Trace.WriteLine("GET /Students/Details/" + id);
+            Trace.WriteLine("GET /Carrer/Details/" + id);
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Student student = db.StudentM.Find(id);
-            if (student == null)
+            Carrer carrer = db.CarrerM.Find(id);
+            if (carrer == null)
             {
                 return HttpNotFound();
             }
-            return View(student);
+            return View(carrer);
         }
 
-        // GET: Students/Create
+        // GET: Carrer/Create
         public ActionResult Create()
         {
-            Trace.WriteLine("GET /Students/Create");
-            return View(new Student { in_date = DateTime.Now });
+            Trace.WriteLine("GET /Carrer/Create");
+            return View(new Carrer {});
         }
 
-        // POST: Students/Create
+        // POST: Carrer/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Description,CreatedDate")] Student student)
+        public ActionResult Create([Bind(Include = "Description,CreatedDate")] Carrer carrer)
         {
-            Trace.WriteLine("POST /Students/Create");
+            Trace.WriteLine("POST /Carrer/Create");
             if (ModelState.IsValid)
             {
-                db.StudentM.Add(student);
+                db.CarrerM.Add(carrer);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(student);
+            return View(carrer);
         }
 
-        // GET: Students/Edit/5
+        // GET: Carrer/Edit/5
         public ActionResult Edit(int? id)
         {
-            Trace.WriteLine("GET /Students/Edit/" + id);
+            Trace.WriteLine("GET /Carrer/Edit/" + id);
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Student student = db.StudentM.Find(id);
-            if (student == null)
+            Carrer carrer = db.CarrerM.Find(id);
+            if (carrer == null)
             {
                 return HttpNotFound();
             }
-            return View(student);
+            return View(carrer);
         }
 
-        // POST: Students/Edit/5
+        // POST: Carrer/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,Description,CreatedDate")] Student student)
+        public ActionResult Edit([Bind(Include = "id,Description,CreatedDate")] Carrer carrer)
         {
-            Trace.WriteLine("POST /Students/Edit/" + student.id);
+            Trace.WriteLine("POST /Carrer/Edit/" + carrer.id);
             if (ModelState.IsValid)
             {
-                db.Entry(student).State = EntityState.Modified;
+                db.Entry(carrer).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(student);
+            return View(carrer);
         }
 
-        // GET: Students/Delete/5
+        // GET: Carrer/Delete/5
         public ActionResult Delete(int? id)
         {
-            Trace.WriteLine("GET /Students/Delete/" + id);
+            Trace.WriteLine("GET /Carrer/Delete/" + id);
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Student student = db.StudentM.Find(id);
-            if (student == null)
+            Carrer carrer = db.CarrerM.Find(id);
+            if (carrer == null)
             {
                 return HttpNotFound();
             }
-            return View(student);
+            return View(carrer);
         }
 
-        // POST: Students/Delete/5
+        // POST: Carrer/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Trace.WriteLine("POST /Students/Delete/" + id);
-            Student student = db.StudentM.Find(id);
-            db.StudentM.Remove(student);
+            Trace.WriteLine("POST /Carrer/Delete/" + id);
+            Carrer carrer = db.CarrerM.Find(id);
+            db.CarrerM.Remove(carrer);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

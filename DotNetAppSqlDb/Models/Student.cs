@@ -13,7 +13,7 @@ namespace DotNetAppSqlDb.Models
         public string id_carrer { get; set; }
 
 
-        [Display(Name = "Created Date")]
+        [Display(Name = "in_date")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime in_date { get; set; }
